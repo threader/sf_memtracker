@@ -1,0 +1,90 @@
+# Project: memtracker
+# Compiler: m68k-AmigaOS
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ 6.10.2 on 13.04.10 16:18
+
+CPP       = m68k-amigaos-g++-3.4.0
+CC        = m68k-amigaos-gcc-3.4.0
+WINDRES   = windres.exe
+OBJ       = ../memtracker/tools.o ../memtracker/assert.o ../memtracker/data.o ../memtracker/dprintf.o ../memtracker/dump.o ../memtracker/fillchar.o ../memtracker/filter.o ../memtracker/mungmem.o ../memtracker/nametag.o ../memtracker/pools.o ../memtracker/privateallocvec.o ../memtracker/system_headers.o ../memtracker/taskinfo.o ../memtracker/timer.o ../memtracker/installpatches.o ../memtracker/allocator.o ../memtracker/main.o ../memtracker/addresstest.o ../memtracker/segtracker.o ../memtracker/monitoring.o
+LINKOBJ   = ../memtracker/tools.o ../memtracker/assert.o ../memtracker/data.o ../memtracker/dprintf.o ../memtracker/dump.o ../memtracker/fillchar.o ../memtracker/filter.o ../memtracker/mungmem.o ../memtracker/nametag.o ../memtracker/pools.o ../memtracker/privateallocvec.o ../memtracker/system_headers.o ../memtracker/taskinfo.o ../memtracker/timer.o ../memtracker/installpatches.o ../memtracker/allocator.o ../memtracker/main.o ../memtracker/addresstest.o ../memtracker/segtracker.o ../memtracker/monitoring.o
+LIBS      = -L"E:/amiga/AmiDevCpp/usr/local/amiga/m68k-amigaos/lib" -noixemul -ldebug  
+INCS      = -I"E:/amiga/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"E:/amiga/AmiDevCpp/usr/local/amiga/m68k-amigaos/include"
+CXXINCS   = -I"E:/amiga/AmiDevCpp/usr/local/amiga/m68k-amigaos/sys-include" -I"E:/amiga/AmiDevCpp/usr/local/amiga/m68k-amigaos/include"
+RCINCS    = --include-dir "E:/amiga/AMIDEV~1/include/common"
+BIN       = memtracker.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)    -O3
+CFLAGS    = $(INCS) $(DEFINES) -m68020 -O3     -O3
+GPROF     = gprof.exe
+RM        = rm -f
+LINK      = m68k-amigaos-g++-3.4.0
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "memtracker.exe" $(LIBS)
+
+../memtracker/tools.o: $(GLOBALDEPS) tools.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c tools.c -o ../memtracker/tools.o $(CFLAGS)
+
+../memtracker/assert.o: $(GLOBALDEPS) assert.c
+	$(CC) -c assert.c -o ../memtracker/assert.o $(CFLAGS)
+
+../memtracker/data.o: $(GLOBALDEPS) data.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h data.h
+	$(CC) -c data.c -o ../memtracker/data.o $(CFLAGS)
+
+../memtracker/dprintf.o: $(GLOBALDEPS) dprintf.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c dprintf.c -o ../memtracker/dprintf.o $(CFLAGS)
+
+../memtracker/dump.o: $(GLOBALDEPS) dump.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c dump.c -o ../memtracker/dump.o $(CFLAGS)
+
+../memtracker/fillchar.o: $(GLOBALDEPS) fillchar.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c fillchar.c -o ../memtracker/fillchar.o $(CFLAGS)
+
+../memtracker/filter.o: $(GLOBALDEPS) filter.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c filter.c -o ../memtracker/filter.o $(CFLAGS)
+
+../memtracker/mungmem.o: $(GLOBALDEPS) mungmem.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h installpatches.h
+	$(CC) -c mungmem.c -o ../memtracker/mungmem.o $(CFLAGS)
+
+../memtracker/nametag.o: $(GLOBALDEPS) nametag.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c nametag.c -o ../memtracker/nametag.o $(CFLAGS)
+
+../memtracker/pools.o: $(GLOBALDEPS) pools.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h installpatches.h
+	$(CC) -c pools.c -o ../memtracker/pools.o $(CFLAGS)
+
+../memtracker/privateallocvec.o: $(GLOBALDEPS) privateallocvec.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h installpatches.h
+	$(CC) -c privateallocvec.c -o ../memtracker/privateallocvec.o $(CFLAGS)
+
+../memtracker/system_headers.o: $(GLOBALDEPS) system_headers.c system_headers.h
+	$(CC) -c system_headers.c -o ../memtracker/system_headers.o $(CFLAGS)
+
+../memtracker/taskinfo.o: $(GLOBALDEPS) taskinfo.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c taskinfo.c -o ../memtracker/taskinfo.o $(CFLAGS)
+
+../memtracker/timer.o: $(GLOBALDEPS) timer.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c timer.c -o ../memtracker/timer.o $(CFLAGS)
+
+../memtracker/installpatches.o: $(GLOBALDEPS) installpatches.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h installpatches.h
+	$(CC) -c installpatches.c -o ../memtracker/installpatches.o $(CFLAGS)
+
+../memtracker/allocator.o: $(GLOBALDEPS) allocator.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h installpatches.h
+	$(CC) -c allocator.c -o ../memtracker/allocator.o $(CFLAGS)
+
+../memtracker/main.o: $(GLOBALDEPS) main.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h Wipeout_rev.h
+	$(CC) -c main.c -o ../memtracker/main.o $(CFLAGS)
+
+../memtracker/addresstest.o: $(GLOBALDEPS) addresstest.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c addresstest.c -o ../memtracker/addresstest.o $(CFLAGS)
+
+../memtracker/segtracker.o: $(GLOBALDEPS) segtracker.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h
+	$(CC) -c segtracker.c -o ../memtracker/segtracker.o $(CFLAGS)
+
+../memtracker/monitoring.o: $(GLOBALDEPS) monitoring.c global.h system_headers.h wipeoutsemaphore.h taskinfo.h magic.h allocator.h pools.h data.h global.h protos.h assert.h installpatches.h
+	$(CC) -c monitoring.c -o ../memtracker/monitoring.o $(CFLAGS)
